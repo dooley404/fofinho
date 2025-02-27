@@ -43,7 +43,7 @@
 
     /* Corações caindo */
     .heart {
-      position: fixed; /* Fixa na tela para não criar espaço extra */
+      position: fixed;
       top: -10px;
       color: red;
       font-size: 20px;
@@ -54,6 +54,11 @@
     @keyframes fall {
       0% { transform: translateY(-10px) translateX(0); opacity: 1; }
       100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
+    }
+
+    /* Impedir overflow */
+    body {
+      overflow-x: hidden;
     }
   </style>
 </head>
@@ -110,11 +115,13 @@
 
     setInterval(createHeart, 300); // Criar coração a cada 300ms
 
-    // Inicializar carrossel
-    new Swiper(".mySwiper", {
-      loop: true,
-      pagination: { el: ".swiper-pagination", clickable: true },
-      autoplay: { delay: 3000 },
+    // Importação correta do Swiper
+    document.addEventListener("DOMContentLoaded", function () {
+      new Swiper(".mySwiper", {
+        loop: true,
+        pagination: { el: ".swiper-pagination", clickable: true },
+        autoplay: { delay: 3000 },
+      });
     });
 
     const date = new Date("2024-10-05T00:00:00");
@@ -144,5 +151,8 @@
     atualizarContador();
     setInterval(atualizarContador, 1000);
   </script>
+
+  <!-- Script do Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </body>
 </html>
