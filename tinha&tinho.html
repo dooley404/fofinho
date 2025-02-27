@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatafofann 🤍</title>
+    <link rel="shortcut icon" href="https://media.stickerswiki.app/female_emotions_1/6785246.512.webp" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+      body{
+        overflow: hidden;
+      }
+      /* Ajuste do tamanho do Spotify */
+      .music-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .music-container iframe {
+        width: 90%;
+        max-width: 400px;
+        height: 80px;
+        border: none;
+      }
+
+      /* Carrossel */
+      .swiper-slide img {
+        width: 70%;
+        height: auto;
+        margin: auto;
+      }
+
+      /* Efeito de entrada */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeIn ease-out 1s forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Corações caindo */
+      .heart {
+        position: fixed;
+        top: -20px;
+        left: 50%;
+        color: red;
+        font-size: 20px;
+        opacity: 0.7;
+        animation: fall linear infinite;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-700 text-white relative m-2 fade-in">
+    <!-- Música -->
+    <div class="flex items-center justify-center fade-in">
+      <div class="flex music-container w-full mt-4">
+        <iframe style="border-radius: 12px" src="https://open.spotify.com/embed/track/1tLBXifMqnSqLZrk1Rsl8n?utm_source=generator&theme=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- Carrossel -->
+    <div class="w-full max-w-md mx-auto mt-4 fade-in">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="imagens/foto1.webp" class="rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagens/foto2.jpg" class="rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagens/foto3.jpg" class="rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagens/foto4.jpg" class="rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagens/foto5.jpg" class="rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagens/foto6.webp" class="rounded-xl" /></div>
+          <div class="swiper-slide"><img src="imagens/foto7.webp" class="rounded-xl" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- Contador -->
+    <div class="flex flex-col items-center mt-6 fade-in">
+      <p class="font-extrabold text-base">🤍 Eu te amo há:</p>
+      <p class="contador font-light"></p>
+      <p>────────────────────────────────────</p>
+      <div class="text-center mt-2">
+        <p class="font-bold">"Se amar é loucura, então sou o mais sábio dos tolos, porque minha única certeza é que te amo."</p>
+      </div>
+    </div>
+
+    <!-- Corações -->
+    <script>
+      function criarCoração() {
+        const heart = document.createElement("div");
+        heart.innerHTML = "🤍";
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * window.innerWidth + "px"; // Posição aleatória
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // Duração aleatória
+        heart.style.fontSize = Math.random() * 15 + 10 + "px"; // Tamanho aleatório
+        heart.style.position = "fixed";
+        heart.style.zIndex = "9999";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+      }
+
+      setInterval(criarCoração, 300);
+    </script>
+
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      new Swiper(".mySwiper", {
+        loop: true,
+        pagination: { el: ".swiper-pagination", clickable: true },
+        autoplay: { delay: 3000 },
+      });
+
+      // Contador
+      const date = new Date("2024-10-05T00:00:00");
+      const contador = document.querySelector(".contador");
+
+      function atualizarContador() {
+        const diff = new Date() - date;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const years = Math.floor(days / 365);
+        const months = Math.floor((days % 365) / 30);
+        const remainingDays = (days % 365) % 30;
+
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if (years > 0) {
+          contador.textContent = `${years} anos, ${months} meses, ${remainingDays} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        } else if (months > 0) {
+          contador.textContent = `${months} meses, ${remainingDays} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        } else {
+          contador.textContent = `${remainingDays} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+      }
+
+      atualizarContador();
+      setInterval(atualizarContador, 1000);
+    </script>
+  </body>
+</html>
