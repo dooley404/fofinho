@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site sigma</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="shortcut icon" href="https://media.stickerswiki.app/female_emotions_1/6785246.512.webp" type="image/x-icon">
-</head>
-<body class="bg-gray-800">
-  <div class="flex justify-center items-center h-screen">
-    <a href="/tinha&tinho.html" class="border text-white px-4 py-2 rounded">Clique 🤍</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatafofann 🤍</title>
+    <link
+      rel="shortcut icon"
+      href="https://media.stickerswiki.app/female_emotions_1/6785246.512.webp"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+
+  <body class="bg-gray-700 text-white relative m-2">
+    <h1 class="text-3xl md:text-5xl font-bold text-center mt-6 mb-4 text-white">
+  Desde o Nosso Primeiro Sim 🤍
+</h1>
+  <div id="overlay" class="fixed inset-0 bg-gray-700 flex items-center justify-center z-50 transition-opacity duration-500 opacity-100 flex-col">
+      <button class="border text-white px-4 py-2 rounded" onclick="clicou()">Clique 🤍</button>
+      <p class="text-xs mt-2">cuidado contém musica</p>
   </div>
-  
-</body>
+
+    </div>
+    <div class="flex items-center justify-center">
+
+    </div>
+
+    <!-- Carrossel de imagens -->
+    <div class="w-full max-w-md mx-auto mt-4">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="imagens/foto1.webp" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto2.jpg" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto3.jpg" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto4.jpg" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto5.jpg" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto6.webp" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto7.webp" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto8.webp" class="rounded-xl" />
+          </div>
+          <div class="swiper-slide">
+            <img src="imagens/foto9.webp" class="rounded-xl" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center mt-6">
+      <p class="font-extrabold text-base">🤍 Eu te amo há:</p>
+      <p class="contador font-light"></p>
+      <p>────────────────────────────────────</p>
+      <div class="text-center mt-2">
+        <p class="font-bold">
+          "Se amar é loucura, então sou o mais sábio dos tolos, porque minha
+          única certeza é que te amo."
+        </p>
+      </div>
+    </div>
+
+    <!-- Corações caindo -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/duration.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/customParseFormat.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

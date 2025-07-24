@@ -1,0 +1,51 @@
+.fade-in {
+      opacity: 0;
+      animation: fadeInAnimation 1s ease-in forwards;
+    }
+
+    @keyframes fadeInAnimation {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Ajuste do tamanho das imagens */
+    .swiper-slide img {
+      width: 70%;
+      height: auto;
+      margin: auto;
+    }
+
+    /* Estilos para tornar o iframe responsivo */
+    .music-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .music-container iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 80px;
+      border: none;
+    }
+
+    /* Corações caindo */
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: red;
+      font-size: 20px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) translateX(0); opacity: 1; }
+      100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
+    }
+
+    /* Impedir overflow */
+    body {
+      overflow-x: hidden;
+    }
